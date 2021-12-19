@@ -1,6 +1,6 @@
 respawn = "BASE";
 respawndelay = 5;
-onLoadMission="DayZ: Standalone";
+onLoadMission="DayZ Legacy";
 OnLoadIntro = "BANGARANG!";
 OnLoadIntroTime = false;
 OnLoadMissionTime = false;

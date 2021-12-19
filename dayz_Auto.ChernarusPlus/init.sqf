@@ -21,10 +21,7 @@ setDate [2013, 12, 16, 15, 0];
 simulWeatherSync;
 //setAccTime 60;
 //skipTime 10.5;
-
 diag_log "SERVER: END world functions";
-
-
 //exportProxies [_position, 200000];
 
 diag_log "SPAWN: START zombie spawn";
@@ -42,5 +39,6 @@ diag_log "SPAWN: END loot spawn";
 
 setTimeForScripts 0.03;
 
+diag_log "SERVER: END init.sqf";
 
 //dbSelectHost "http://localhost/";
