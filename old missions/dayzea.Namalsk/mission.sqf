@@ -1,0 +1,6 @@
+activateAddons [
+"Namalsk"
+];
+
+activateAddons [];
+
