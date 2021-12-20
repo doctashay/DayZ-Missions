@@ -1,36 +1,28 @@
 weedMenu = {
-
 fullLoadout = {
-"Bag_Hunting" createInInventory (player);
-"BallisticHelmet_Black" createVehicle (getPosATL player);
-"TTsKO_Jacket_Camo" createVehicle (getPosATL player);
+player createInInventory "BagTaloon_Green";
+player createInInventory "M4A1";
+player createInInventory "BallisticHelmet_Black"; 
+player createInInventory "M_STANAG_30Rnd";
+player createInInventory "TTsKO_Jacket_Camo";
 "ItemCompass" createVehicle (getPosATL player);
 "ItemRadio" createVehicle (getPosATL player);
 "Jeans_Black" createVehicle (getPosATL player);
-"MedicalItem_Bandage" createVehicle (getPosATL player);
-"MedicalItem_Bloodbag" createVehicle (getPosATL player);
-"M_STANAG_30Rnd" createVehicle (getPosATL player);
-"M_STANAG_30Rnd" createVehicle (getPosATL player);
-"UKAssVest_Black" createVehicle (getPosATL player);
+player createInInventory "MedicalItem_Bandage";
+player createInInventory "MedicalItem_Bloodbag";
+player createInInventory "M_STANAG_30Rnd";
+player createInInventory "M_STANAG_30Rnd";
+player createInInventory "UKAssVest_Black";
 "M4A1" createVehicle (getPosATL player);
-player addWeapon "M4A1";
+//player addWeapon "M4A1";
 player addWeapon "Magnum";
 player addMagazine "M_STANAG_30Rnd";
 //player addMagazine "100Rnd_762x51_M240";
 };
 
-killme = {
+respawn = {
 player setPos(player modelToWorld [0,0,2000]);
 player setPos(player modelToWorld [0,0,0]);
-};
-
-dropnear = {
-		_veh = "UH60" createVehicle (getPosATL player);
-		player moveInDriver _veh;
-};
-
-ejectvehicle = {
-	player moveOut;
 };
 
 timeday = {
@@ -60,27 +52,12 @@ infammo = {
 	[] spawn compile sCode;
 };
 
-spawncardriver = {
-	_veh = "MV22" createVehicle (getPosATL player);
-	hint "Vehicle created!";
-	player moveInDriver _veh;
-	hint "Moved into vehicle!";
-};
-
-spawnskodadriver = {
-	_veh = "UH1Y" createVehicle (getPosATL player);
-	hint "Vehicle created!";
-	player moveInDriver _veh;
-	hint "Moved into vehicle!";
-};
-
-spawnav8b = {
-	_veh = "Mi17_medevac_RU" createVehicle (getPosATL player);
-	player moveInDriver _veh;
-};
-
 startdebugmenu = {
 	createDialog "RscDisplayDebug";
+};
+
+ejectVehicle = {
+	moveOut player;
 };
 
 executer = {
@@ -121,6 +98,38 @@ nocollide = {
 		_objects = _objects - [_x];
 	} forEach _objects;
 };
+
+
+
+// uazspawn = {
+// 	"UAZ_CDF" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
+
+// ospreyspawn = {
+// 	"MV22" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
+
+// mi17spawn = {
+// 	"Mi17_medevac_RU" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
+
+// hmmwvspawn = {
+// 	"HMMWV" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
+
+// hiluxspawn = {
+// 	"hilux1_civil_1_open" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
+
+// uralspawn = {
+// 	"Ural_CDF" createVehicle (getPosATL player);
+// 	player moveInDriver;
+// };
 
 fastwalk = {
 	_doWait = false;
@@ -202,18 +211,12 @@ teleMenu = [];
 genSubMenu = {hint "holder";};
 
 menuScripts = [
-//	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
-	["Suicide",killme,false,"",false],
-	["Bowen Executer",executer,false,"",false],
+	["Vehicle Menu (Client Side)",{tempArray = vehMenu;vehMenu spawn genSubMenu;},false,"",true],
+	["Suicide",respawn,false,"",false],
+	["Script Executer",executer,false,"",false],
 	["Start Debug Menu",startdebugmenu,false,"",false],
-	["Drop Near",dropnear,false,"",false],
-	["Eject from vehicles",ejectvehicle,false,"",false],
-	["Spawn HMMWV",spawncardriver,false,"",false],
-	["Spawn Skoda",spawnskodadriver,false,"",false],
+	["Eject from vehicles",ejectVehicle,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
-	["Spawn Mi17",spawnav8b,false,"",false],
-	["Spawn MV22 Osprey",spawnosprey,false,"",false],
-	["Fast Walk",fastwalk,true,"toggle_1",false],
 	["Infinite Ammo",infammo,true,"toggle_7",false],
 	["Time Day",timeday,false,"",false],
 	["Time Night",timenight,false,"",false],
@@ -229,6 +232,16 @@ teleMenu = [
 	["Balota Teleport",balotatele,false,""],
 	["Oaks Teleport",oakstele,false,""]
 	];
+
+vehMenu = [
+	["UAZ",uazspawn,false,""],
+	["HMMWV",hmmwvspawn,false,""],
+	["Hilux",hiluxspawn,false,""],
+	["MV22 Osprey",ospreyspawn,false,""],
+	["MI17",mi17spawn,false,""],
+	["Ural",uralspawn,false,""]
+	];
+
 
 shiftMenu = {
 	if ((typeName _this) == "ARRAY") then {

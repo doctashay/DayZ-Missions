@@ -2,8 +2,6 @@ diag_log "SERVER: START init.sqf";
 
 setTimeForScripts 90;
 
-
-
 diag_log "SERVER: START load DayZ modules";
 call compile preprocessFileLineNumbers "\dz\modulesDayZ\init.sqf";
 diag_log "SERVER: END load DayZ modules";
@@ -42,10 +40,15 @@ diag_log "SPAWN: END loot spawn";
 diag_log "ADDONS: START load custom modules";
 //call compile preprocessFileLineNumbers "debugFunctions.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
+call compile preprocessFileLineNumbers "spawnAir.sqf";
+call compile preprocessFileLineNumbers "dbg.sqf";
 diag_log "ADDONS: END load custom modules";
 
 setTimeForScripts 0.03;
 
 diag_log "SERVER: END init.sqf";
+
+waitUntil {isSceneReady};
+cutText [format["Welcome to DayZ Legacy, %1.", name player], "PLAIN"];
 
 //dbSelectHost "http://localhost/";
