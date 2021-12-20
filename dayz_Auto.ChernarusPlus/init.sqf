@@ -2,6 +2,8 @@ diag_log "SERVER: START init.sqf";
 
 setTimeForScripts 90;
 
+
+
 diag_log "SERVER: START load DayZ modules";
 call compile preprocessFileLineNumbers "\dz\modulesDayZ\init.sqf";
 diag_log "SERVER: END load DayZ modules";
@@ -31,11 +33,16 @@ diag_log "SPAWN: END zombie spawn";
 
 diag_log "SPAWN: START loot spawn";
 _position = [7500, 7500, 0];
-//importProxies;	
+importProxies;	
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
 
 //dbInitServer;
+
+diag_log "ADDONS: START load custom modules";
+//call compile preprocessFileLineNumbers "debugFunctions.sqf";
+call compile preprocessFileLineNumbers "spawnCar.sqf";
+diag_log "ADDONS: END load custom modules";
 
 setTimeForScripts 0.03;
 
