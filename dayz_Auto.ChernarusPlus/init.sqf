@@ -41,6 +41,7 @@ diag_log "SPAWN: END loot spawn";
 
 diag_log "ADDONS: START load custom modules";
 //call compile preprocessFileLineNumbers "debugFunctions.sqf";
+call compile preprocessFileLineNumbers "spawnCar.sqf";
 diag_log "ADDONS: END load custom modules";
 
 setTimeForScripts 0.03;

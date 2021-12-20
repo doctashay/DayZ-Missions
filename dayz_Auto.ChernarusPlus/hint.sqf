@@ -1,21 +1,27 @@
 weedMenu = {
 
 fullLoadout = {
-"AmmoBoxSmall_762" createVehicle (getPosATL player);
-"Bag_Russian" createVehicle (getPosATL player);
-"BaseballCap_Olive" createVehicle (getPosATL player);
-"Hoodie_Black" createVehicle (getPosATL player);
+"Bag_Hunting" createVehicle (getPosATL player);
+"BallisticHelmet_Black" createVehicle (getPosATL player);
+"TTsKO_Jacket_Camo" createVehicle (getPosATL player);
 "ItemCompass" createVehicle (getPosATL player);
 "ItemRadio" createVehicle (getPosATL player);
 "Jeans_Black" createVehicle (getPosATL player);
 "MedicalItem_Bandage" createVehicle (getPosATL player);
 "MedicalItem_Bloodbag" createVehicle (getPosATL player);
-"30RndMagazine" createVehicle (getPosATL player);
-"TacticalVest" createVehicle (getPosATL player);
+"M_STANAG_30Rnd" createVehicle (getPosATL player);
+"M_STANAG_30Rnd" createVehicle (getPosATL player);
+"UKAssVest_Black" createVehicle (getPosATL player);
 "M4A1" createVehicle (getPosATL player);
 player addWeapon "M4A1";
-player addWeapon "Makarov";
+player addWeapon "Magnum";
+player addMagazine "M_STANAG_30Rnd";
 //player addMagazine "100Rnd_762x51_M240";
+};
+
+killme = {
+player setPos(player modelToWorld [0,0,2000]);
+player setPos(player modelToWorld [0,0,0]);
 };
 
 timeday = {
@@ -47,7 +53,16 @@ infammo = {
 
 spawncardriver = {
 	_veh = "HMMWV" createVehicle (getPosATL player);
-	//player moveInDriver _veh;
+	hint "Vehicle created!";
+	player moveInDriver _veh;
+	hint "Moved into vehicle!";
+};
+
+spawnskodadriver = {
+	_veh = "Skoda" createVehicle (getPosATL player);
+	hint "Vehicle created!";
+	player moveInDriver _veh;
+	hint "Moved into vehicle!";
 };
 
 spawnav8b = {
@@ -55,9 +70,8 @@ spawnav8b = {
 	player moveInDriver _veh;
 };
 
-spawnosprey = {
-	_veh = "MV22" createVehicle (getPosATL player);
-	player moveInDriver _veh;
+startdebugmenu = {
+	createDialog "RscDisplayDebug";
 };
 
 executer = {
@@ -68,7 +82,7 @@ executer = {
 	disableSerialization;
 	ctrlSetText[1600,'Execute'];
 	ctrlSettext[1601,'Exit'];
-	ctrlSetText[1300,'Bowens Script Executer'];
+	ctrlSetText[1300,'Weeds Script Executer'];
 	buttonSetAction[1600,'_text = (ctrlText 1400);[] spawn compile _text;'];
 };
 
@@ -171,16 +185,21 @@ toggle_7 = false;
 toggle_8 = false;
 toggle_9 = false;
 toggle_10 = false;
-
+toggle_11 = false;
+toggle_12 = false;
+toggle_13 = false;
+toggle_14 = false;
 teleMenu = [];
 genSubMenu = {hint "holder";};
 
 menuScripts = [
-	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
+//	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
 	["Suicide",killme,false,"",false],
 	["Bowen Executer",executer,false,"",false],
+	["Start Debug Menu",startdebugmenu,false,"",false],
 	["Drop Near",dropnear,false,"",false],
 	["Spawn HMMWV",spawncardriver,false,"",false],
+	["Spawn Skoda", spawnskodadriver,false"",false],
 	["Full Loadout",fullLoadout,false,"",false],
 	["Spawn AV8B Jet",spawnav8b,false,"",false],
 	["Spawn MV22 Osprey",spawnosprey,false,"",false],
