@@ -1,7 +1,7 @@
 weedMenu = {
 
 fullLoadout = {
-"Bag_Hunting" createVehicle (getPosATL player);
+"Bag_Hunting" createInInventory (player);
 "BallisticHelmet_Black" createVehicle (getPosATL player);
 "TTsKO_Jacket_Camo" createVehicle (getPosATL player);
 "ItemCompass" createVehicle (getPosATL player);
@@ -22,6 +22,15 @@ player addMagazine "M_STANAG_30Rnd";
 killme = {
 player setPos(player modelToWorld [0,0,2000]);
 player setPos(player modelToWorld [0,0,0]);
+};
+
+dropnear = {
+		_veh = "UH60" createVehicle (getPosATL player);
+		player moveInDriver _veh;
+};
+
+ejectvehicle = {
+	player moveOut;
 };
 
 timeday = {
@@ -52,21 +61,21 @@ infammo = {
 };
 
 spawncardriver = {
-	_veh = "HMMWV" createVehicle (getPosATL player);
+	_veh = "MV22" createVehicle (getPosATL player);
 	hint "Vehicle created!";
 	player moveInDriver _veh;
 	hint "Moved into vehicle!";
 };
 
 spawnskodadriver = {
-	_veh = "Skoda" createVehicle (getPosATL player);
+	_veh = "UH1Y" createVehicle (getPosATL player);
 	hint "Vehicle created!";
 	player moveInDriver _veh;
 	hint "Moved into vehicle!";
 };
 
 spawnav8b = {
-	_veh = "AV8B" createVehicle (getPosATL player);
+	_veh = "Mi17_medevac_RU" createVehicle (getPosATL player);
 	player moveInDriver _veh;
 };
 
@@ -198,10 +207,11 @@ menuScripts = [
 	["Bowen Executer",executer,false,"",false],
 	["Start Debug Menu",startdebugmenu,false,"",false],
 	["Drop Near",dropnear,false,"",false],
+	["Eject from vehicles",ejectvehicle,false,"",false],
 	["Spawn HMMWV",spawncardriver,false,"",false],
-	["Spawn Skoda", spawnskodadriver,false"",false],
+	["Spawn Skoda",spawnskodadriver,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
-	["Spawn AV8B Jet",spawnav8b,false,"",false],
+	["Spawn Mi17",spawnav8b,false,"",false],
 	["Spawn MV22 Osprey",spawnosprey,false,"",false],
 	["Fast Walk",fastwalk,true,"toggle_1",false],
 	["Infinite Ammo",infammo,true,"toggle_7",false],

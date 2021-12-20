@@ -18,11 +18,9 @@ dzLegacyDebug = true;
  if (dzLegacyDebug) then
  {
 	waitUntil {isSceneReady};
+	call compile preprocessFileLineNumbers "hint.sqf";
 	statusChat ["DayZ Legacy: Loaded debug functions.", "ColorImportant"];
  };
-
-call compile preprocessFileLineNumbers "hint.sqf";
-
 
 debugMonitor = true;
 keybinds = false;
