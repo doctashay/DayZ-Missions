@@ -14,6 +14,7 @@ player createInInventory "M_STANAG_30Rnd";
 player createInInventory "M_STANAG_30Rnd";
 player createInInventory "UKAssVest_Black";
 "M4A1" createVehicle (getPosATL player);
+"HMMWV" createVehicle (getPosATL player);
 //player addWeapon "M4A1";
 player addWeapon "Magnum";
 player addMagazine "M_STANAG_30Rnd";
@@ -21,7 +22,7 @@ player addMagazine "M_STANAG_30Rnd";
 };
 
 respawn = {
-player setPos(player modelToWorld [0,0,2000]);
+player setPos(player modelToWorld [0,0,30]);
 player setPos(player modelToWorld [0,0,0]);
 };
 
@@ -31,6 +32,18 @@ setDate [1986, 2, 25, 12, 0];
 
 timenight = {
 setDate [1986, 2, 25, 23, 0];
+};
+
+hmmwvSpawn = {
+	"HMMWV" createVehicle (getPosATL player);
+};
+
+uralSpawn = {
+	"Ural_CDF" createVehicle (getPosATL player);
+};
+
+uazSpawn = {
+	"UAZ_CDF" createVehicle (getPosATL player);
 };
 
 infammo = {
@@ -101,13 +114,8 @@ nocollide = {
 
 
 
-// uazspawn = {
-// 	"UAZ_CDF" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
-
 // ospreyspawn = {
-// 	"MV22" createVehicle (getPosATL player);
+//  "MV22" createVehicle (getPosATL player);
 // 	player moveInDriver;
 // };
 
@@ -116,20 +124,7 @@ nocollide = {
 // 	player moveInDriver;
 // };
 
-// hmmwvspawn = {
-// 	"HMMWV" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
 
-// hiluxspawn = {
-// 	"hilux1_civil_1_open" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
-
-// uralspawn = {
-// 	"Ural_CDF" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
 
 fastwalk = {
 	_doWait = false;
@@ -234,12 +229,12 @@ teleMenu = [
 	];
 
 vehMenu = [
-	["UAZ",uazspawn,false,""],
-	["HMMWV",hmmwvspawn,false,""],
-	["Hilux",hiluxspawn,false,""],
-	["MV22 Osprey",ospreyspawn,false,""],
-	["MI17",mi17spawn,false,""],
-	["Ural",uralspawn,false,""]
+	["UAZ",uazSpawn,false,""],
+//	["MV22 Osprey",ospreyspawn,false,""],
+	["HMMWV",hmmwvSpawn,false,""],
+//	["Hilux",hiluxspawn,false,""],
+//	["MI17",mi17spawn,false,""],
+	["Ural",uralSpawn,false,""]
 	];
 
 
