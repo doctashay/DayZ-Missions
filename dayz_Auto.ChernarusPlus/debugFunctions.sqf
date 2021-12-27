@@ -7,7 +7,7 @@ dzLegacyDebug = true;
  if (dzLegacyDebug) then
  {
 	waitUntil {isSceneReady};
-	call compile preprocessFileLineNumbers "hint.sqf";
+	call compile preprocessFileLineNumbers "debugMenu.sqf";
 	statusChat ["DayZ Legacy: Loaded debug functions.", "ColorImportant"];
  };
 
@@ -16,7 +16,7 @@ keybinds = false;
 
 while {debugMonitor} do {
 waitUntil {isSceneReady};
-//diag_log "DayZ Legacy: Debug monitor initialized.";
+diag_log "DayZ Legacy: Debug monitor initialized.";
 _unit = player;
 _blood = round(((_unit getVariable['blood',0])/5000)*100);
 _health = round(((_unit getVariable['health',0])/5000)*100);
