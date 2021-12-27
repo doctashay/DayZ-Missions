@@ -60,6 +60,7 @@ _createPlayer =
 		diag_log str(_this);
 		playerQueueVM = _this call player_queued;
 
+
 		0 setOvercast (_this select 4);
 		simulSetHumidity (_this select 4);
 		0 setRain (_this select 5);
@@ -159,6 +160,13 @@ onPlayerDisconnected _disconnectPlayer;
 	{null = _agent createInInventory _x} forEach [_myTop,_myBottom,_myShoe];
 	_v = _agent createInInventory "tool_flashlight";
 	_v = _agent createInInventory "consumable_battery9V";_v setVariable ["power",30000];
+	_v = _agent createInInventory "M4A1";
+	_v = _agent createInInventory "BagTaloon_Green";
+	_v = _agent createInInventory "BallisticHelmet_Black";
+	_v = _agent createInInventory "M_STANAG_30Rnd";
+	_v = _agent createInInventory "TTsKO_Jacket_Camo";
+	_v = _agent createInInventory "M_STANAG_30Rnd";
+	_v = _agent createInInventory "UKAssVest_Black";
 	_agent call init_newPlayer;
 	call init_newBody;
 };
