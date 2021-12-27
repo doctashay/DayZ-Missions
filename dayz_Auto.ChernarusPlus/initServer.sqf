@@ -1,3 +1,5 @@
+diag_log "Arrived at redirected initServer.sqf";
+
 DZ_MAX_ZOMBIES = 1000;
 DZ_TotalZombies = 0;
 playerBodies = [];
@@ -50,7 +52,7 @@ weapon_swapHandguard =compile preprocessFileLineNumbers "\dz\server\scripts\weap
 building_spawnLoot =	compile preprocessFileLineNumbers "\dz\server\scripts\server\building_spawnLoot.sqf";
 init_spawnLoot = 		compile preprocessFileLineNumbers "\dz\server\scripts\init\spawnLoot.sqf";
 init_spawnZombies = 	compile preprocessFileLineNumbers "\dz\server\scripts\init\spawnZombies.sqf";
-player_queued = 		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\player_queued.sqf";
+player_queued = 		compile preprocessFileLineNumbers "player_queued.sqf";
 
 //functions
 fnc_generateTooltip = compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\fn_generateTooltip.sqf";
@@ -68,7 +70,7 @@ tick_modifiers =		compile preprocessFileLineNumbers "\dz\server\scripts\function
 tick_states =		compile preprocessFileLineNumbers "\dz\server\scripts\functions\tick_states.sqf";
 tick_environment = 	compile preprocessFileLineNumbers "\dz\server\scripts\functions\tick_environment.sqf";
 randomValue =		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\randomValue.sqf";
-dbLoadPlayer = 		compile preprocessFileLineNumbers "\dz\server\scripts\functions\dbLoadPlayer.sqf";
+dbLoadPlayer = 		compile preprocessFileLineNumbers "dbLoadPlayer.sqf";
 world_surfaceNoise = 	compile preprocessFileLineNumbers "\dz\server\scripts\functions\fn_surfaceNoise.sqf";
 
 //initialize
