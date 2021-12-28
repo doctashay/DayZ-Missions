@@ -39,6 +39,7 @@ diag_log "ADDONS: START load custom modules";
 
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
+call compile preprocessFileLineNumbers "debugFunctions.sqf";
 
 
 diag_log "ADDONS: END load custom modules";
