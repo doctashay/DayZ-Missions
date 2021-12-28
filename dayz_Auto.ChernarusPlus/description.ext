@@ -9,7 +9,7 @@ destroyDisconnected = false;
 // roleless missions
 scriptedPlayer = true;//???
 
-disableChannels[]={0,1,2,6};
+disableChannels[]={];
 
 class Header
 {
