@@ -164,6 +164,8 @@ onPlayerDisconnected _disconnectPlayer;
 	_v = _agent createInInventory "BagTaloon_Green";
 	_v = _agent createInInventory "BallisticHelmet_Black";
 	_v = _agent createInInventory "M_STANAG_30Rnd";
+	_v = _agent createInInventory "M_STANAG_30Rnd";
+	_v = _agent createInInventory "M_STANAG_30Rnd";
 	_v = _agent createInInventory "TTsKO_Jacket_Camo";
 	_v = _agent createInInventory "M_STANAG_30Rnd";
 	_v = _agent createInInventory "UKAssVest_Black";

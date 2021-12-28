@@ -1,7 +1,7 @@
 //DayZ Legacy 0.44
 //init.sqf - Begins server initialization. 
 
-iag_log "SERVER: START init.sqf";
+diag_log "SERVER: START init.sqf";
 setTimeForScripts 90;
 
 DZ_MP_CONNECT = true;
@@ -44,6 +44,4 @@ call compile preprocessFileLineNumbers "spawnAir.sqf";
 diag_log "ADDONS: END load custom modules";
 
 diag_log "SERVER: END init.sqf";
-
-
-setTimeForScripts 0.03;
+setTimeForScripts 0.1;

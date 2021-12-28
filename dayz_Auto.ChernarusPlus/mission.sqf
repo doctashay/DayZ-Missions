@@ -2,4 +2,3 @@ activateAddons [
 ];
 
 activateAddons [];
-
