@@ -1,5 +1,5 @@
-//client side scripts
-//some DZ legacy scripts will be called from here
+//DayZ Legacy 0.44
+//debugFunctions.sqf - A series of debug functions that are called on the client-side. 
 
 diag_log "DayZ Legacy: Debug functions have been called.";
 
@@ -15,8 +15,7 @@ debugMonitor = true;
 keybinds = false;
 
 while {debugMonitor} do {
-waitUntil {isSceneReady};
-diag_log "DayZ Legacy: Debug monitor initialized.";
+waitUntil {alive player};
 _unit = player;
 _blood = round(((_unit getVariable['blood',0])/5000)*100);
 _health = round(((_unit getVariable['health',0])/5000)*100);

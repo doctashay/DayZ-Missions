@@ -1,3 +1,6 @@
+//DayZ Legacy 0.44
+//debugMenu.sqf - A debug menu used to test server functions. 
+
 weedMenu = {
 fullLoadout = {
 player createInInventory "BagTaloon_Green";

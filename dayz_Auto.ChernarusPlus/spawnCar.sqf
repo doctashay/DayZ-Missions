@@ -1,3 +1,6 @@
+//DayZ Legacy 0.44
+//spawnCar.sqf - Handles car spawning for the server
+
 activateAddons["DZ_Vehicles_wheeled"];
 
 _this = createVehicle ["UAZ_CDF", [9762.67, 1749.51, 0.00176013], [], 0, "CAN_COLLIDE"];

@@ -1,3 +1,7 @@
+//DayZ Legacy 0.44
+//player_queued.sqf - Handles spawn and inventory creation for the player
+//This script has been redirected from dz\server_data\ to provide better ability to add or extend functionality.
+
 diag_log "Started player queue script override";
 
 _id = _this select 0;

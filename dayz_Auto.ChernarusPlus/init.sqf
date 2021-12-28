@@ -1,4 +1,7 @@
-diag_log "SERVER: START init.sqf";
+//DayZ Legacy 0.44
+//init.sqf - Begins server initialization. 
+
+iag_log "SERVER: START init.sqf";
 setTimeForScripts 90;
 
 DZ_MP_CONNECT = true;

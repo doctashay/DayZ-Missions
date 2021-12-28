@@ -1,3 +1,6 @@
+//DayZ Legacy 0.44
+//spawnAir.sqf - Handles helicopter spawning for the server
+
 activateAddons["CAAir", "CAAir2", "CAAir3"];
 
 createVehicle ["IND_Heli_Light01_Military_H", [9742.67, 1723.21, 0.00176013], [], 0, "CAN_COLLIDE"];

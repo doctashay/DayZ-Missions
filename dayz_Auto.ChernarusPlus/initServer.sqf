@@ -1,3 +1,7 @@
+//DayZ Legacy 0.44
+//initServer.sqf - Initializes server events and functions.
+//This script has been redirected from dz\modulesDayz to provide better ability to add or extend functionality.
+
 diag_log "Arrived at redirected initServer.sqf";
 
 DZ_MAX_ZOMBIES = 1000;
