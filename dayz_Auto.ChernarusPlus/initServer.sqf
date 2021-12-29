@@ -1,6 +1,6 @@
 //DayZ Legacy 0.44
 //initServer.sqf - Initializes server events and functions.
-//This script has been redirected from dz\modulesDayz to provide better ability to add or extend functionality.
+//This script has been redirected from dz\modulesDayz and dz\server_data to provide better ability to add or extend functionality.
 
 diag_log "Arrived at redirected initServer.sqf";
 
@@ -15,73 +15,73 @@ windSpeed = 0;
 debug = false;
 
 //events
-event_saySound =		compile preprocessFileLineNumbers "\dz\server\scripts\events\event_saySound.sqf";
-event_weaponFired =		compile preprocessFileLineNumbers "\dz\server\scripts\events\event_weaponFired.sqf";
-event_craftMessage = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_craftMessage.sqf";
-event_modifier = 		compile preprocessFileLineNumbers "\dz\server\scripts\events\event_modifier.sqf";
-event_assessDamage = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_assessDamage.sqf";
-event_transferModifiers = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_transferModifiers.sqf";
-event_igniteObject = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_igniteObject2.sqf";
-event_clearModifiers = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_clearModifiers.sqf";
-event_playerKilled = 	compile preprocessFileLineNumbers "\dz\server\scripts\events\event_playerKilled.sqf";
-event_hitZombie =		compile preprocessFileLineNumbers "\dz\server\scripts\events\event_hitZombie.sqf";
-event_bloodTransfusion = compile preprocessFileLineNumbers "\dz\server\scripts\events\event_bloodTransfusion.sqf";
-event_killedZombie = compile preprocessFileLineNumbers "\dz\server\scripts\events\event_killedZombie.sqf";
-event_gasLight = compile preprocessFileLineNumbers "\dz\server\scripts\events\event_gasLight.sqf";
+event_saySound =		compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_saySound.sqf";
+event_weaponFired =		compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_weaponFired.sqf";
+event_craftMessage = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_craftMessage.sqf";
+event_modifier = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_modifier.sqf";
+event_assessDamage = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_assessDamage.sqf";
+event_transferModifiers = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_transferModifiers.sqf";
+event_igniteObject = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_igniteObject2.sqf";
+event_clearModifiers = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_clearModifiers.sqf";
+event_playerKilled = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_playerKilled.sqf";
+event_hitZombie =		compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_hitZombie.sqf";
+event_bloodTransfusion = compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_bloodTransfusion.sqf";
+event_killedZombie = compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_killedZombie.sqf";
+event_gasLight = compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_gasLight.sqf";
 
 //players
-//player_checkStealth = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_checkStealth.sqf";
-player_combineQuantity = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_combineQuantity.sqf";
-player_splitQuantity = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_splitQuantity.sqf";
-player_useItem =		compile preprocessFileLineNumbers "\dz\server\scripts\players\player_useItem.sqf";
-player_useItemEnd =		compile preprocessFileLineNumbers "\dz\server\scripts\players\player_useItemEnd.sqf";
-player_fillBottle =		compile preprocessFileLineNumbers "\dz\server\scripts\players\player_fillBottle.sqf";
-player_stripMagazine = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_stripMagazine.sqf";
-player_loadMagazine = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_loadMagazine.sqf";
-player_addInventory = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_addInventory.sqf";
-player_actionOnTarget = compile preprocessFileLineNumbers "\dz\server\scripts\players\player_actionOnTarget.sqf";
-player_actionOnSelf = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_actionOnSelf.sqf";
-player_actionOnItem = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_actionOnItem.sqf";
-player_combineMoney = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_combineMoney.sqf";
-player_applyBandage = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_applyBandage.sqf";
-player_chamberRound = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_chamberRound.sqf";
-player_loadWeapon = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_loadWeapon.sqf";
-player_pickBerry =		compile preprocessFileLineNumbers "\dz\server\scripts\players\player_pickBerry.sqf";
-player_applyDefibrillator = 	compile preprocessFileLineNumbers "\dz\server\scripts\players\player_applyDefibrillator.sqf";
+//player_checkStealth = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_checkStealth.sqf";
+player_combineQuantity = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_combineQuantity.sqf";
+player_splitQuantity = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_splitQuantity.sqf";
+player_useItem =		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_useItem.sqf";
+player_useItemEnd =		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_useItemEnd.sqf";
+player_fillBottle =		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_fillBottle.sqf";
+player_stripMagazine = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_stripMagazine.sqf";
+player_loadMagazine = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_loadMagazine.sqf";
+player_addInventory = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_addInventory.sqf";
+player_actionOnTarget = compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_actionOnTarget.sqf";
+player_actionOnSelf = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_actionOnSelf.sqf";
+player_actionOnItem = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_actionOnItem.sqf";
+player_combineMoney = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_combineMoney.sqf";
+player_applyBandage = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_applyBandage.sqf";
+player_chamberRound = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_chamberRound.sqf";
+player_loadWeapon = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_loadWeapon.sqf";
+player_pickBerry =		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_pickBerry.sqf";
+player_applyDefibrillator = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_applyDefibrillator.sqf";
 
 //weapons
-weapon_swapHandguard =compile preprocessFileLineNumbers "\dz\server\scripts\weapons\weapon_swapHandguard.sqf";
+weapon_swapHandguard =compile preprocessFileLineNumbers "\dzlegacy\server_data\weapons\weapon_swapHandguard.sqf";
 
 //server
-building_spawnLoot =	compile preprocessFileLineNumbers "\dz\server\scripts\server\building_spawnLoot.sqf";
-init_spawnLoot = 		compile preprocessFileLineNumbers "\dz\server\scripts\init\spawnLoot.sqf";
-init_spawnZombies = 	compile preprocessFileLineNumbers "\dz\server\scripts\init\spawnZombies.sqf";
-player_queued = 		compile preprocessFileLineNumbers "player_queued.sqf";
+building_spawnLoot =	compile preprocessFileLineNumbers "\dzlegacy\server_data\server\building_spawnLoot.sqf";
+init_spawnLoot = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\init\spawnLoot.sqf";
+init_spawnZombies = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\init\spawnZombies.sqf";
+player_queued = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_queued.sqf";
 
 //functions
 fnc_generateTooltip = compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\fn_generateTooltip.sqf";
-fnc_inString = 		compile preprocessFileLineNumbers "\functions\fn_inString.sqf";
-fnc_inAngleSector =  	compile preprocessFileLineNumbers "\functions\fn_inAngleSector.sqf";
-fnc_isMaxQuantity = 		compile preprocessFileLineNumbers "\functions\isMaxQuantity.sqf";
-BIS_fnc_findSafePos =	compile preprocessFileLineNumbers "\functions\fn_findSafePos.sqf";
-fnc_generateQuantity =compile preprocessFileLineNumbers "\functions\fn_generateQuantity.sqf";
-dayz_losCheck =		compile preprocessFileLineNumbers "\functions\dayz_losCheck.sqf";
-dayz_losChance = 		compile preprocessFileLineNumbers "\functions\dayz_losChance.sqf";
+fnc_inString = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_inString.sqf";
+fnc_inAngleSector =  	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_inAngleSector.sqf";
+fnc_isMaxQuantity = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\isMaxQuantity.sqf";
+BIS_fnc_findSafePos =	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_findSafePos.sqf";
+fnc_generateQuantity =compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_generateQuantity.sqf";
+dayz_losCheck =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losCheck.sqf";
+dayz_losChance = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losChance.sqf";
 dayz_bulletHit = 		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\dayz_bulletHit.sqf";
 fnc_playerMessage =	compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\fn_playerMessage.sqf";
-runZombieBrain =		compile preprocessFileLineNumbers "\functions\runZombieBrain.sqf";
-tick_modifiers =		compile preprocessFileLineNumbers "\functions\tick_modifiers.sqf";
-tick_states =		compile preprocessFileLineNumbers "\functions\tick_states.sqf";
-tick_environment = 	compile preprocessFileLineNumbers "\functions\tick_environment.sqf";
+runZombieBrain =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\runZombieBrain.sqf";
+tick_modifiers =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_modifiers.sqf";
+tick_states =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_states.sqf";
+tick_environment = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_environment.sqf";
 randomValue =		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\randomValue.sqf";
-dbLoadPlayer = 		compile preprocessFileLineNumbers "dbLoadPlayer.sqf";
-world_surfaceNoise = 	compile preprocessFileLineNumbers "\functions\fn_surfaceNoise.sqf";
+dbLoadPlayer = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dbLoadPlayer.sqf";
+world_surfaceNoise = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_surfaceNoise.sqf";
 
 //initialize
-zombie_initialize = 	compile preprocessFileLineNumbers "\dz\server\scripts\init\zombie_initialize.sqf";
-player_initialize = 	compile preprocessFileLineNumbers "\dz\server\scripts\init\player_initialize.sqf";
-init_battery = 		compile preprocessFileLineNumbers "\dz\server\scripts\init\battery_initialize.sqf";
-init_cooker = 		compile preprocessFileLineNumbers "\dz\server\scripts\init\cooker_initialize.sqf";
+zombie_initialize = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\init\zombie_initialize.sqf";
+player_initialize = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\init\player_initialize.sqf";
+init_battery = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\init\battery_initialize.sqf";
+init_cooker = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\init\cooker_initialize.sqf";
 init_lamp =
 {
 	if (isServer) then
