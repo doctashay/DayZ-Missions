@@ -1,0 +1,6 @@
+//DayZ Legacy 0.44
+//clientSide.sqf - An additional file where client-side scripts can be run.
+
+diag_log "Arrived at client side script";
+
+"UAZ_CDF" createVehicle (getPosATL player);
