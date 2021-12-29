@@ -1,6 +1,6 @@
 respawn = "BASE";
 respawndelay = 5;
-onLoadMission="DayZ: lets roll";
+onLoadMission="DayZ Legacy";
 OnLoadIntro = "BANGARANG!";
 OnLoadIntroTime = false;
 OnLoadMissionTime = false;
@@ -9,13 +9,11 @@ destroyDisconnected = false;
 // roleless missions
 scriptedPlayer = true;//???
 
-disableChannels[]={0,1,2,6};
-
 class Header
 {
  gameType = COOP;            //DM, Team, Coop, ...
  minPlayers = 1;             //min # of players the mission supports
- maxPlayers = 20;            //Max # of players the mission supports
+ maxPlayers = 200;            //Max # of players the mission supports
 };
 
 //#include "dialogs\baseClasses.hpp"
