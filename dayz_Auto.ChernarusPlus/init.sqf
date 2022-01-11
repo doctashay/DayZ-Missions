@@ -9,6 +9,8 @@ DZ_MAX_ZOMBIES = 700;
 
 diag_log "SERVER: START load DayZ modules";
 call compile preprocessFileLineNumbers "initServer.sqf";
+call compile preprocessFileLineNumbers "spawnCar.sqf";
+call compile preprocessFileLineNumbers "spawnAir.sqf";
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
 
@@ -37,9 +39,6 @@ diag_log "SPAWN: END loot spawn";
 
 diag_log "ADDONS: START load custom modules";
 
-call compile preprocessFileLineNumbers "spawnCar.sqf";
-call compile preprocessFileLineNumbers "spawnAir.sqf";
-call compile preprocessFileLineNumbers "debugFunctions.sqf";
 
 
 diag_log "ADDONS: END load custom modules";
