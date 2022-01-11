@@ -9,6 +9,8 @@ destroyDisconnected = false;
 // roleless missions
 scriptedPlayer = true;//???
 
+disableChannels[]={0,1,2,6};
+
 class Header
 {
  gameType = COOP;            //DM, Team, Coop, ...

@@ -1,7 +1,4 @@
-//DayZ Legacy 0.44
-//spawnCar.sqf - Handles car spawning for the server
-
-activateAddons["DZ_Vehicles_wheeled", "hsim_wheeled_h_truck_light_transport", "hsim_wheeled_h_police_car"];
+activateAddons["DZ_Vehicles_wheeled"];
 
 _this = createVehicle ["UAZ_CDF", [9762.67, 1749.51, 0.00176013], [], 0, "CAN_COLLIDE"];
 _this = createVehicle ["Skoda", [9767.67, 1749.21, 0.00176013], [], 0, "CAN_COLLIDE"];
@@ -46,6 +43,7 @@ _this = createVehicle ["datsun1_civil_2_covered", [5691.65, 2579.14, 0], [], 0, 
 _this = createVehicle ["UralOpen_CDF", [6255.8, 3256.48, 0], [], 0, "CAN_COLLIDE"]; //novoselki parkovka
 _this = createVehicle ["datsun1_civil_2_covered", [6682.32, 3580.23, 0], [], 0, "CAN_COLLIDE"]; //dubki
 _this = createVehicle ["hilux1_civil_2_covered", [7805.4, 3534.9, 0], [], 0, "CAN_COLLIDE"]; //ptigorodki naves(gora)
+hint "Vehicles created!";
+diag_log "Vehicles created.";
 
-diag_log "Land vehicles created.";
 

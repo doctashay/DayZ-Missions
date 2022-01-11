@@ -1,6 +1,6 @@
 activateAddons [
-"dz_books"
-"dz_pistols_magnum"
+	"DZ_Vehicles_wheeled"
 ];
 
 activateAddons [];
+
