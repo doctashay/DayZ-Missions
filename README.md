@@ -1,5 +1,5 @@
-# DayZ Legacy Mission Data
-A collection of mission files for DayZ Legacy 0.44.
+#DayZ Legacy Mission Data
+A collection of mission files for DayZ Legacy 0.44. 
 
 dayz_Auto.ChernarusPlus contains the current working version of DayZ Legacy. 
 
