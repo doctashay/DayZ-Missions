@@ -11,13 +11,11 @@ player createInInventory "TTsKO_Jacket_Camo";
 "ItemCompass" createVehicle (getPosATL player);
 "ItemRadio" createVehicle (getPosATL player);
 "Jeans_Black" createVehicle (getPosATL player);
-player createInInventory "MedicalItem_Bandage";
 player createInInventory "MedicalItem_Bloodbag";
 player createInInventory "M_STANAG_30Rnd";
 player createInInventory "M_STANAG_30Rnd";
 player createInInventory "UKAssVest_Black";
 "M4A1" createVehicle (getPosATL player);
-"HMMWV" createVehicle (getPosATL player);
 //player addWeapon "M4A1";
 player addWeapon "Magnum";
 player addMagazine "M_STANAG_30Rnd";
@@ -48,6 +46,8 @@ uralSpawn = {
 uazSpawn = {
 	"UAZ_CDF" createVehicle (getPosATL player);
 };
+
+
 
 infammo = {
 	if (isnil ("infammoON")) then 
