@@ -7,7 +7,7 @@ DZ_MAX_ZOMBIES = 700;
 
 
 call dbLoadPlayer;
-dbSelectHost "http://localhost/DayZServlet/"; 
+dbSelectHost "http://localhost:5000/DayZServlet/"; 
 
 
 _humidity = 0.3;
