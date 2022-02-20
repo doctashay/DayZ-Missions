@@ -12,7 +12,7 @@ windChill = 0;
 worldLightScale = 0;
 windSpeed = 0;
 
-debug = false;
+debug = true;
 
 //events
 event_saySound =		compile preprocessFileLineNumbers "\dzlegacy\server_data\events\event_saySound.sqf";
@@ -59,7 +59,7 @@ init_spawnZombies = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\in
 player_queued = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\players\player_queued.sqf";
 
 //functions
-fnc_generateTooltip = compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\fn_generateTooltip.sqf";
+fnc_generateTooltip = compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\scripts\fn_generateTooltip.sqf";
 fnc_inString = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_inString.sqf";
 fnc_inAngleSector =  	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_inAngleSector.sqf";
 fnc_isMaxQuantity = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\isMaxQuantity.sqf";
@@ -67,13 +67,13 @@ BIS_fnc_findSafePos =	compile preprocessFileLineNumbers "\dzlegacy\server_data\f
 fnc_generateQuantity =compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_generateQuantity.sqf";
 dayz_losCheck =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losCheck.sqf";
 dayz_losChance = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losChance.sqf";
-dayz_bulletHit = 		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\dayz_bulletHit.sqf";
-fnc_playerMessage =	compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\fn_playerMessage.sqf";
+dayz_bulletHit = 		compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\scripts\dayz_bulletHit.sqf";
+fnc_playerMessage =	compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\fn_playerMessage.sqf";
 runZombieBrain =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\runZombieBrain.sqf";
 tick_modifiers =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_modifiers.sqf";
 tick_states =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_states.sqf";
 tick_environment = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_environment.sqf";
-randomValue =		compile preprocessFileLineNumbers "\dz\modulesDayZ\scripts\randomValue.sqf";
+randomValue =		compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\randomValue.sqf";
 dbLoadPlayer = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dbLoadPlayer.sqf";
 world_surfaceNoise = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_surfaceNoise.sqf";
 
@@ -126,7 +126,7 @@ init_newBody =
 	//move player into body
 	_id selectPlayer _agent;
 	_agent call player_initialize;	
-	[_id] spawnForClient compile "player execFSM '\dz\modulesDayZ\fsm\brain_player_client.fsm'";
+	[_id] spawnForClient compile "player execFSM '\dzlegacy\dayz_modules\fsm\brain_player_client.fsm'";
 	_agent addEventHandler ["HandleDamage",{_this call event_assessDamage} ];
 	myNotifiers = _agent getVariable ["myNotifiers",[]];
 	_id publicVariableClient "myNotifiers";
