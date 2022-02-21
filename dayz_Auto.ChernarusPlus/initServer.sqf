@@ -68,12 +68,12 @@ fnc_generateQuantity =compile preprocessFileLineNumbers "\dzlegacy\server_data\f
 dayz_losCheck =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losCheck.sqf";
 dayz_losChance = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dayz_losChance.sqf";
 dayz_bulletHit = 		compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\scripts\dayz_bulletHit.sqf";
-fnc_playerMessage =	compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\fn_playerMessage.sqf";
+fnc_playerMessage =	compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\scripts\fn_playerMessage.sqf";
 runZombieBrain =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\runZombieBrain.sqf";
 tick_modifiers =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_modifiers.sqf";
 tick_states =		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_states.sqf";
 tick_environment = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\tick_environment.sqf";
-randomValue =		compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\randomValue.sqf";
+randomValue =		compile preprocessFileLineNumbers "\dzlegacy\dayz_modules\scripts\randomValue.sqf";
 dbLoadPlayer = 		compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\dbLoadPlayer.sqf";
 world_surfaceNoise = 	compile preprocessFileLineNumbers "\dzlegacy\server_data\functions\fn_surfaceNoise.sqf";
 
