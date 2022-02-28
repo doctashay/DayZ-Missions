@@ -8,7 +8,7 @@ DZ_MP_CONNECT = true;
 DZ_MAX_ZOMBIES = 700;
 
 diag_log "SERVER: START load DayZ modules";
-call compile preprocessFileLineNumbers "initServer.sqf";
+call compile preprocessFileLineNumbers "\dzlegacy\server_data\scripts\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
 call dbLoadPlayer;
@@ -35,7 +35,7 @@ spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
 
 //dbInitServer;
-//dbSelectHost "http://localhost:9000/DayZServlet/";
+dbSelectHost "http://localhost:5000/DayZServlet/";
 
 diag_log "ADDONS: START load custom modules";
 
