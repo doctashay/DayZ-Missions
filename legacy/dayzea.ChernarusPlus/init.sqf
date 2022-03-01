@@ -7,7 +7,7 @@ DZ_MAX_ZOMBIES = 700;
 
 
 call dbLoadPlayer;
-dbSelectHost "http://localhost/DayZServlet/"; 
+dbSelectHost "http://localhost:5000/DayZServlet/"; 
 
 
 _humidity = 0.3;
@@ -16,7 +16,7 @@ simulSetHumidity _humidity;
 0 setOvercast _humidity;
 
 _position = [7500,7500,0];
-exportProxies [_position,200000];
+//exportProxies [_position,200000];
 call init_spawnZombies;
 sleep 1;
 importProxies;	
