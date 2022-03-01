@@ -5,7 +5,8 @@ diag_log "SERVER: START init.sqf";
 setTimeForScripts 90;
 
 DZ_MP_CONNECT = true;
-DZ_MAX_ZOMBIES = 700;
+DZ_MAX_ZOMBIES = 1000;
+DZ_MAX_ANIMALS = 2000;
 
 dbSelectHost "http://localhost:5000/DayZServlet/";
 
@@ -13,6 +14,9 @@ diag_log "SERVER: START load DayZ modules";
 call compile preprocessFileLineNumbers "\dzlegacy\modulesDayZ\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
+
+_obj = createVehicle ["HMMWV", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
 
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
