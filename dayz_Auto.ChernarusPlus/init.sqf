@@ -10,7 +10,7 @@ DZ_MAX_ZOMBIES = 700;
 dbSelectHost "http://localhost:5000/DayZServlet/";
 
 diag_log "SERVER: START load DayZ modules";
-call compile preprocessFileLineNumbers "\dzlegacy\server_data\scripts\init.sqf";
+call compile preprocessFileLineNumbers "\dzlegacy\modulesDayZ\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
 

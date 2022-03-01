@@ -46,6 +46,9 @@ _this = createVehicle ["datsun1_civil_2_covered", [5691.65, 2579.14, 0], [], 0, 
 _this = createVehicle ["UralOpen_CDF", [6255.8, 3256.48, 0], [], 0, "CAN_COLLIDE"]; //novoselki parkovka
 _this = createVehicle ["datsun1_civil_2_covered", [6682.32, 3580.23, 0], [], 0, "CAN_COLLIDE"]; //dubki
 _this = createVehicle ["hilux1_civil_2_covered", [7805.4, 3534.9, 0], [], 0, "CAN_COLLIDE"]; //ptigorodki naves(gora)
-
+_this = createVehicle ["HMMWV", [2227.16, 5116.78, 0.720073], [], 0, "CAN_COLLIDE"]; //base test
+//_this = createVehicle ["TentMedium_Pitchedred", [2220.71, 5120.27, 0.00143433], [], 0, "CAN_COLLIDE"]; //base test
+_this = createVehicle ["TentLarge_Pitched", [2220.71, 5120.27, 0.00143433], [], 0, "CAN_COLLIDE"]; //base test
+_this = createVehicle ["MH60S", [2240.83, 5117.39, 0.00192261], [], 0, "CAN_COLLIDE"]; //base test
 diag_log "Land vehicles created.";
 
