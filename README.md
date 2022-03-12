@@ -1,7 +1,7 @@
 # DayZ Legacy Mission Data
 
 <p align="center">
-  <a href="https://www.codacy.com/gh/doctashay/DayZ-Missions/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=doctashay/DayZ-Missions&amp;utm_campaign=Badge_Grade" rel="nofollow"><img src="https://app.codacy.com/project/badge/Grade/d71cbf4c259f4ff699e151268d34507b" alt="Codacy Badge" style="max-width:100%;"></a>
+  <a href="https://www.codacy.com/gh/doctashay/DayZ-Missions/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=doctashay/DayZ-Missions&amp;utm_campaign=Badge_Grade" rel="nofollow"><img src="https://app.codacy.com/project/badge/Grade/5bdca7ad1b064f35a1462325a1d9442b" alt="Codacy Badge" style="max-width:100%;"></a>
   <a href="https://discord.gg/TF7CXGMFqg"><img src="https://img.shields.io/discord/756287461377703987" alt="Discord"></a>
   <a href="https://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt=PRs Welcome></a>
 </p>
