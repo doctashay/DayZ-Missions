@@ -20,6 +20,10 @@ player createInInventory "UKAssVest_Black";
 player createInInventory "Magnum";
 };
 
+weaponMenu = {
+	"AK74" createVehicle (getPosATL player);
+};
+
 nightlight = {
 		if (toggle_13) then
 		{
@@ -38,7 +42,7 @@ nightlight = {
 };							
 
 debugcam = {
-		systemchat "Freecamera Active Press Num0 to Exit";
+		systemchat "Debug Camera activated. Press Numpad 0 to Exit";
         _ppos = getPosATL cameraOn;
         _pX = _ppos select 0;
         _pY = _ppos select 1;
@@ -58,12 +62,54 @@ debugcam = {
 };
 
 respawn = {
-player setPos(player modelToWorld [0,0,30]);
-player setPos(player modelToWorld [0,0,0]);
+		player setVelocity[0,0,1000];
+		sleep 0.2;
+		player setVelocity[0,0,-1000];
+		sleep 0.3;
+};
+
+fastwalk = {
+	_doWait = false;
+	if(toggle_1) then {hint "SPEED WALK ON!";} else {hint "SPEED WALK OFF!";};
+	while{toggle_1} do {
+		if(_doWait) then {sleep 0.1;_doWait = false;};
+		if(inputAction "MoveForward" > 0|| inputAction "MoveFastForward" > 0|| inputAction "MoveSlowForward" > 0 || inputAction "EvasiveForward" > 0) then {
+			_distance = 0.7;
+			_dir = getdir vehicle player;
+			_pos = getposasl vehicle player;
+			if ((_pos select 2) > 5) then 
+			{
+				_pos = [(_pos select 0)+_distance*sin(_dir),(_pos select 1)+_distance*cos(_dir),(_pos select 2)];
+			}
+			else
+			{
+				_pos = [(_pos select 0)+_distance*sin(_dir),(_pos select 1)+_distance*cos(_dir),getTerrainHeightASL [(_pos select 0),(_pos select 1)]-.1];
+			};
+			player setPosASL _pos;
+			_doWait = true;
+		} else {
+			if(inputAction "MoveBack" > 0|| inputAction "EvasiveBack" > 0) then {
+				_distance = -0.7;
+				_dir = getdir vehicle player;
+				_pos = getposasl vehicle player;
+				if ((_pos select 2) > 5) then 
+				{
+					_pos = [(_pos select 0)+_distance*sin(_dir),(_pos select 1)+_distance*cos(_dir),(_pos select 2)];
+				}
+				else
+				{
+					_pos = [(_pos select 0)+_distance*sin(_dir),(_pos select 1)+_distance*cos(_dir),getTerrainHeightASL [(_pos select 0),(_pos select 1)]-.1];
+				};
+				player setPosASL _pos;
+				_doWait = true;
+			};
+		};
+		sleep 0.001;
+	};
 };
 
 timeday = {
-setDate [2022, 2, 6, 12, 0];
+setDate [2022, 2, 6, 8, 0];
 };
 
 timenight = {
@@ -82,15 +128,13 @@ uazSpawn = {
 	"UAZ_CDF" createVehicle (getPosATL player);
 };
 
-// ospreyspawn = {
-//  "MV22" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
+ospreyspawn = {
+	"MV22" createVehicle (getPosATL player);
+};
 
-// mi17spawn = {
-// 	"Mi17_medevac_RU" createVehicle (getPosATL player);
-// 	player moveInDriver;
-// };
+mi17spawn = {
+	"Mi17_medevac_RU" createVehicle (getPosATL player);
+};
 
 infammo = {
 	if (isnil ("infammoON")) then 
@@ -218,7 +262,8 @@ menuScripts = [
 	["No Collide",nocollide,true,"toggle_4",false],
 	["Debug Camera",debugcam,false,"",false],
 	["Night Light",nightlight,false,"",false],
-	["No Grass",removegrass,true,"toggle_5",false]
+	["No Grass",removegrass,true,"toggle_5",false],
+	["Fast Walk", fastwalk,false,"toggle_1",false]
 ];
 
 teleMenu = [
@@ -232,12 +277,12 @@ teleMenu = [
 
 vehMenu = [
 	["UAZ",uazSpawn,false,""],
-//	["MV22 Osprey",ospreyspawn,false,""],
+	["Ural",uralSpawn,false,""],
 	["HMMWV",hmmwvSpawn,false,""],
-//	["Hilux",hiluxspawn,false,""],
-//	["MI17",mi17spawn,false,""],
-	["Ural",uralSpawn,false,""]
-	];
+	["Hilux",hiluxspawn,false,""],
+	["Mi17",mi17spawn,false,""],
+	["MV22 Osprey",ospreyspawn,false,""]
+];
 
 
 shiftMenu = {
