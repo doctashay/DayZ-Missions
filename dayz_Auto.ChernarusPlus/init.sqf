@@ -20,6 +20,20 @@ call compile preprocessFileLineNumbers "spawnAir.sqf";
 _obj = createVehicle ["HMMWV", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
 _obj setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
 
+_obj2 = createVehicle ["BallisticHelmet_Black", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj2 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj3 = createVehicle ["TTSKO_Jacket_Camo", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj3 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj4 = createVehicle ["ttsko_pants_Beige", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj4 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj5 = createVehicle ["CombatBoots_Black", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj5 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+
+
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
 
