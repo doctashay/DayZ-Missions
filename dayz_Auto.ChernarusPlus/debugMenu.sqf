@@ -250,6 +250,7 @@ genSubMenu = {hint "holder";};
 menuScripts = [
 	["Vehicle Menu (Client Side)",{tempArray = vehMenu;vehMenu spawn genSubMenu;},false,"",true],
 	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
+	["Weapon Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
 	["Script Executer",executer,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
 	["Suicide",respawn,false,"",false],
