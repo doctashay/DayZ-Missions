@@ -8,6 +8,8 @@ DZ_MP_CONNECT = true;
 DZ_MAX_ZOMBIES = 1000;
 DZ_MAX_ANIMALS = 2000;
 
+dzLegacyDebug = true;
+
 dbSelectHost "http://localhost:5000/DayZServlet/";
 
 diag_log "SERVER: START load DayZ modules";
@@ -45,7 +47,18 @@ dbSelectHost "http://localhost:5000/DayZServlet/";
 
 diag_log "ADDONS: START load custom modules";
 
-diag_log "ADDONS: END load custom modules";
+if (dzLegacyDebug) then {
+_result = ["Would you like to enable the DayZ Legacy RVExtension?", "Debug", true, true] call BIS_fnc_guiMessage; 
+ 
+    if (_result) then { 
+     systemChat "RVExtension will be loaded during this session."; 
+	 hint("RVExtension" callExtension "");
 
+    } else { 
+     systemChat "RVExtension will not be loaded during this session.";
+    };
+}
+
+diag_log "ADDONS: END load custom modules";
 diag_log "SERVER: END init.sqf";
 setTimeForScripts 0.1;
