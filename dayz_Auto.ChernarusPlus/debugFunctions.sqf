@@ -3,6 +3,8 @@
 
 diag_log "DayZ Legacy: Debug functions have been called.";
 
+
+dzLegacyDebug = true;
 debugMonitor = true;
 keybinds = true;
 

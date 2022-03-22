@@ -20,10 +20,6 @@ player createInInventory "UKAssVest_Black";
 player createInInventory "Magnum";
 };
 
-weaponMenu = {
-	"AK74" createVehicle (getPosATL player);
-};
-
 nightlight = {
 		if (toggle_13) then
 		{
@@ -116,25 +112,7 @@ timenight = {
 setDate [2022, 2, 6, 24, 0];
 };
 
-hmmwvSpawn = {
-	"HMMWV" createVehicle (getPosATL player);
-};
 
-uralSpawn = {
-	"Ural_CDF" createVehicle (getPosATL player);
-};
-
-uazSpawn = {
-	"UAZ_CDF" createVehicle (getPosATL player);
-};
-
-ospreyspawn = {
-	"MV22" createVehicle (getPosATL player);
-};
-
-mi17spawn = {
-	"Mi17_medevac_RU" createVehicle (getPosATL player);
-};
 
 infammo = {
 	if (isnil ("infammoON")) then 
@@ -230,6 +208,30 @@ oakstele = {
 player setPos [4817,2223];
 };
 
+hmmwvSpawn = {
+	"HMMWV" createVehicle (getPosATL player);
+};
+
+uralSpawn = {
+	"Ural_CDF" createVehicle (getPosATL player);
+};
+
+uazSpawn = {
+	"UAZ_CDF" createVehicle (getPosATL player);
+};
+
+ospreyspawn = {
+	"MV22" createVehicle (getPosATL player);
+};
+
+mi17spawn = {
+	"Mi17_medevac_RU" createVehicle (getPosATL player);
+};
+
+ak74spawn = {
+	"AK74" createVehicle (getPosATL player);
+};
+
 toggle_1 = false;
 toggle_2 = false;
 toggle_3 = false;
@@ -245,12 +247,14 @@ toggle_12 = false;
 toggle_13 = false;
 toggle_14 = false;
 teleMenu = [];
+vehMenu = [];
+weapMenu = [];
 genSubMenu = {hint "holder";};
 
 menuScripts = [
 	["Vehicle Menu (Client Side)",{tempArray = vehMenu;vehMenu spawn genSubMenu;},false,"",true],
 	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
-	["Weapon Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
+	["Weapon Menu",{tempArray = weapMenu;weapMenu spawn genSubMenu;},false,"",true],
 	["Script Executer",executer,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
 	["Suicide",respawn,false,"",false],
@@ -283,6 +287,10 @@ vehMenu = [
 	["Hilux",hiluxspawn,false,""],
 	["Mi17",mi17spawn,false,""],
 	["MV22 Osprey",ospreyspawn,false,""]
+];
+
+weapMenu = [
+	["AK74",ak74spawn,false,""]
 ];
 
 
