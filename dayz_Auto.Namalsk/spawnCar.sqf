@@ -46,6 +46,23 @@ _this = createVehicle ["datsun1_civil_2_covered", [5691.65, 2579.14, 0], [], 0, 
 _this = createVehicle ["UralOpen_CDF", [6255.8, 3256.48, 0], [], 0, "CAN_COLLIDE"]; //novoselki parkovka
 _this = createVehicle ["datsun1_civil_2_covered", [6682.32, 3580.23, 0], [], 0, "CAN_COLLIDE"]; //dubki
 _this = createVehicle ["hilux1_civil_2_covered", [7805.4, 3534.9, 0], [], 0, "CAN_COLLIDE"]; //ptigorodki naves(gora)
+_this = createVehicle ["TentMedium_Pitchedred", [2220.71, 5120.27, 0.00143433], [], 0, "CAN_COLLIDE"]; //base test
+_this = createVehicle ["TentLarge_Pitched", [2220.71, 5120.27, 0.00143433], [], 0, "CAN_COLLIDE"]; //base test
+_this = createVehicle ["MH60S", [2240.83, 5117.39, 0.00192261], [], 0, "CAN_COLLIDE"]; //base test
 
+_obj = createVehicle ["HMMWV", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj2 = createVehicle ["BallisticHelmet_Black", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj2 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj3 = createVehicle ["TTSKO_Jacket_Camo", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj3 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj4 = createVehicle ["ttsko_pants_Beige", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj4 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_obj5 = createVehicle ["CombatBoots_Black", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
+_obj5 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
 diag_log "Land vehicles created.";
 
