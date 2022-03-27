@@ -17,6 +17,7 @@ diag_log "SERVER: END load DayZ modules";
 call compile preprocessFileLineNumbers "\dzlegacy\modulesDayZ\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
+call compile preprocessFileLineNumbers "spawnArmory.sqf";
 
 diag_log "SERVER: START world functions";
 _humidity = random 1;
@@ -40,16 +41,7 @@ diag_log "SPAWN: END loot spawn";
 diag_log "ADDONS: START load custom modules";
 
 if (dzLegacyDebug) then {
-waitUntil {isSceneReady};
-_result = ["Would you like to enable the DayZ Legacy RVExtension?", "Debug", true, true] call BIS_fnc_guiMessage; 
- 
-    if (_result) then { 
-     systemChat "RVExtension will be loaded during this session."; 
-	 hint("RVExtension" callExtension "");
 
-    } else { 
-     systemChat "RVExtension will not be loaded during this session.";
-    };
 };
 
 diag_log "ADDONS: END load custom modules";

@@ -2,6 +2,7 @@
 //debugMenu.sqf - A debug menu used to test server functions. 
 
 weedMenu = {
+
 fullLoadout = {
 _weapon = player createInInventory "M4A1";
 _weapon addMagazine "M_STANAG_30Rnd";
@@ -111,8 +112,6 @@ setDate [2022, 2, 6, 8, 0];
 timenight = {
 setDate [2022, 2, 6, 24, 0];
 };
-
-
 
 infammo = {
 	if (isnil ("infammoON")) then 
@@ -267,8 +266,8 @@ menuScripts = [
 	["No Collide",nocollide,true,"toggle_4",false],
 	["Debug Camera",debugcam,false,"",false],
 	["Night Light",nightlight,false,"",false],
-	["No Grass",removegrass,true,"toggle_5",false],
-	["Fast Walk", fastwalk,false,"toggle_1",false]
+	["Fast Walk", fastwalk,true,"toggle_1",false],
+	["No Grass",removegrass,true,"toggle_5",false]
 ];
 
 teleMenu = [
@@ -284,7 +283,7 @@ vehMenu = [
 	["UAZ",uazSpawn,false,""],
 	["Ural",uralSpawn,false,""],
 	["HMMWV",hmmwvSpawn,false,""],
-	["Hilux",hiluxspawn,false,""],
+	//["Hilux",hiluxspawn,false,""],
 	["Mi17",mi17spawn,false,""],
 	["MV22 Osprey",ospreyspawn,false,""]
 ];
