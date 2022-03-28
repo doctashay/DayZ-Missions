@@ -3,9 +3,10 @@
 
 diag_log "DayZ Legacy: Debug functions have been called.";
 
-
 dzLegacyDebug = true;
+
 debugMonitor = true;
+extensionEnable = true;
 keybinds = true;
 
  if (dzLegacyDebug) then
@@ -14,12 +15,23 @@ keybinds = true;
 	call compile preprocessFileLineNumbers "debugMenu.sqf";
 	statusChat ["DayZ Legacy: Debug functions initialized.", "ColorImportant"];
  };
+
+ if (extensionEnable) then {
+	waitUntil {isSceneReady};
+	_result = ["Would you like to enable the DayZ Legacy RVExtension?", "Debug", true, true] call BIS_fnc_guiMessage; 
+    	if (_result) then { 
+    		systemChat "RVExtension will be loaded during this session."; 
+	 		hint("RVExtension" callExtension "");
+    	} else { 
+     		systemChat "RVExtension will not be loaded during this session.";
+   	 	};
+};
  
 while {debugMonitor} do {
 	waitUntil {alive player};
 	_unit = player;
 	_blood = round(((_unit getVariable['blood',0])/5000)*100);
-		_health = round(((_unit getVariable['health',0])/5000)*100);
+	_health = round(((_unit getVariable['health',0])/5000)*100);
 	_shock = round(((_unit getVariable['shock',0])/5000)*100);
 	_hand = currentWeapon _unit;
 	_gridPos = mapGridPosition player;
@@ -29,10 +41,9 @@ while {debugMonitor} do {
 	//hintSilent format ["Name: %1\nUID: %2\nBlood: %3\nHealth: %4\nShock:%5\nFPS:%6\nCurrent Weapon:%7\nGPS:%8\nMap Coords:%9", name player, getPlayerUID player, _blood, _health, _shock, floor(diag_fps), _hand, _gridPos, _pp];
 };
 
-while {keybinds} do {
-	diag_log "DayZ Legacy: Keybinds initialized.";
-	waitUntil {alive player};
-
+statusChat["DayZ Legacy: Keybinds initialized.", "ColorImportant"];
+while (keybinds) do {
+	waitUntil {alive player;
 	dokeyDown={
      private ["_key"] ;
      _key = _this select 1; 
@@ -48,5 +59,6 @@ while {keybinds} do {
     	 "_this call dokeyDown"
      ];
 	sleep 0.5;
+	};
 };
 
