@@ -14,6 +14,6 @@ dzLegacyDebug = true;
     [] spawn extensionCheck;
 	[] spawn keybindCheck;
 	[] spawn debugMonitorCheck;
-	statusChat ["DayZ Legacy: Debug functions initialized.", "ColorImportant"];
+	statusChat ["DayZ Legacy: Debug functions initialized.", "ColorFriendly"];
  };
 
