@@ -113,6 +113,86 @@ timenight = {
 setDate [2022, 2, 6, 24, 0];
 };
 
+cloudyday = {
+	0 setOvercast 1;
+    0 setRain 0;
+	0 setFog 0.3;
+	setDate [2022, 2, 6, 9, 0];
+	simulWeatherSync;
+};
+
+lightrainyday = {
+	0 setOvercast 0.7;
+    0 setRain 0.8;
+	0 setFog 0.5;
+	setDate [2022, 2, 6, 10, 0];
+	simulWeatherSync;
+};
+
+heavyrainyday = {
+	0 setOvercast 1;
+    0 setRain 1;
+	0 setFog 0.7;
+	setDate [2022, 2, 6, 10, 0];
+	simulWeatherSync;
+};
+
+foggyday = {
+	0 setOvercast 1;
+    0 setRain 0;
+	0 setFog 1;
+	setDate [2022, 2, 6, 12, 0];
+	simulWeatherSync;
+};
+
+sunnyday = {
+	0 setOvercast 0;
+    0 setRain 0;
+	0 setFog 0;
+	setDate [2022, 2, 6, 12, 0];
+	simulWeatherSync;
+};
+
+cloudynight = {
+	0 setOvercast 1;
+    0 setRain 0;
+	0 setFog 0.2;
+	setDate [2022, 2, 6, 1, 0];
+	simulWeatherSync;
+};
+
+lightrainynight = {
+	0 setOvercast 0.7;
+    0 setRain 0.8;
+	0 setFog 0.5;
+	setDate [2022, 2, 6, 1, 0];
+	simulWeatherSync;
+};
+
+heavyrainynight = {
+	0 setOvercast 1;
+    0 setRain 1;
+	0 setFog 1;
+	setDate [2022, 2, 6, 1, 0];
+	simulWeatherSync;
+};
+
+foggynight = {
+	0 setOvercast 1;
+    0 setRain 0;
+	0 setFog 1;
+	setDate [2022, 2, 6, 1, 0];
+	simulWeatherSync;
+};
+
+clearnight = {
+	0 setOvercast 0;
+    0 setRain 0;
+	0 setFog 0;
+	setDate [2022, 2, 6, 23, 0];
+	simulWeatherSync;
+};
+
 infammo = {
 	if (isnil ("infammoON")) then 
 	{
@@ -253,6 +333,7 @@ genSubMenu = {hint "holder";};
 menuScripts = [
 	["Vehicle Menu (Client Side)",{tempArray = vehMenu;vehMenu spawn genSubMenu;},false,"",true],
 	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
+	["Weather Menu",{tempArray = weatherMenu;weatherMenu spawn genSubMenu;},false,"",true],
 	["Weapon Menu",{tempArray = weapMenu;weapMenu spawn genSubMenu;},false,"",true],
 	["Script Executer",executer,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
@@ -278,6 +359,19 @@ teleMenu = [
 	["Balota Teleport",balotatele,false,""],
 	["Oaks Teleport",oakstele,false,""]
 	];
+
+weatherMenu = [
+	["Cloudy Day",cloudyday,false,""],
+	["Light Rainy Day",lightrainyday,false,""],
+	["Heavy Rainy Day",heavyrainyday,false,""],
+	["Foggy Day",foggyday,false,""],
+	["Sunny Day",sunnyday,false,""],
+	["Cloudy Night",cloudynight,false,""],
+	["Light Rainy Night",lightrainynight,false,""],
+	["Heavy Rainy Night",heavyrainyday,false,""],
+	["Foggy Night",foggynight,false,""],
+	["Clear Night",clearnight,false,""]
+];
 
 vehMenu = [
 	["UAZ",uazSpawn,false,""],
