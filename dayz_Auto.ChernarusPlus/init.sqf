@@ -33,6 +33,7 @@ diag_log "SPAWN: START zombie and loot spawn";
 call init_spawnZombies;
 
 _position = [7500, 7500, 0];
+dbLoadLoot;
 importProxies;
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
