@@ -1,17 +1,14 @@
 keybinds = true;
 
 keybindCheck = {
+	statusChat ["DayZ Legacy: Keybinds initialized.", "ColorFriendly"];
 	while {keybinds} do {
-		waitUntil {alive player};
-
-		statusChat ["DayZ Legacy: Keybinds initialized.", "ColorFriendly"];
-
 		dokeyDown={
      	private ["_key"] ;
      	_key = _this select 1; 
      	switch (_key) do {
          	 case (0x3B): {sleep 1;createDialog "RscDisplayDebug";};
-          	case (0x3C): {sleep 1;execVM "hint.sqf";};
+          	 case (0x3C): {sleep 1;execVM "hint.sqf";};
     	 };     
     	 _return
 		};

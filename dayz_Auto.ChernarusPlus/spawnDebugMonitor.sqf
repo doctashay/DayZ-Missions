@@ -3,7 +3,6 @@ debugMonitor = true;
 debugMonitorCheck =
 {
 	while {debugMonitor} do {
-		waitUntil {alive player};
 		_unit = player;
 		_blood = round(((_unit getVariable['blood',0])/5000)*100);
 		_health = round(((_unit getVariable['health',0])/5000)*100);
