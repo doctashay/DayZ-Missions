@@ -11,6 +11,8 @@ DZ_MAX_ANIMALS = 2000;
 diag_log "SERVER: START load DayZ modules";
 dzLegacyDebug = true;
 dbSelectHost "http://localhost:5000/DayZServlet/";
+
+
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
 
@@ -34,6 +36,7 @@ diag_log "SPAWN: START zombie and loot spawn";
 call init_spawnZombies;
 
 _position = [7500, 7500, 0];
+//dbLoadLoot; 
 importProxies;
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
@@ -46,4 +49,6 @@ if (dzLegacyDebug) then {
 
 diag_log "ADDONS: END load custom modules";
 diag_log "SERVER: END init.sqf";
+
+
 setTimeForScripts 0.1;
