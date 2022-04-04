@@ -18,7 +18,9 @@ To preserve the integrity of these script modules, two separate versions of the 
 
 Our modified DayZ Legacy mission has several changes like a debug monitor that shows coordinates, FPS, and blood/health/shock values, as well as a debug menu to perform a variety of different functions for testing purposes. This mission also has scripts that handle animal, helicrash, car, and helicopter spawning. This mission uses a copy of `modules_DayZ.pbo` and `server_data.pbo` that are present in the `@DayZLegacy` addon, which is hosted at this repository here: https://github.com/doctashay/DayZ-Legacy-Addons. These scripts have been merged with scripts from newer versions of the game to support things like pulse checking, horticulture, hunting, camping, fishing, base building, etc. 
 
-dayz_Auto.ChernarusPlus contains the current working version of the DayZ Legacy mission, while dayzea.ChernarusPlus is the original, vanilla mission (maybe has been changed a little bit?)
+dayz_Auto.ChernarusPlus contains the current working version of the DayZ Legacy mission, while dayzea.ChernarusPlus is the original, vanilla mission (maybe has been changed a little bit?).
+
+We have separate missions for other maps we eventually plan to add support for, such as Namalsk and Fallujah. In their current state, these need to be updated, as well as the maps themselves.
 
 ## Script Execution Flow
 
