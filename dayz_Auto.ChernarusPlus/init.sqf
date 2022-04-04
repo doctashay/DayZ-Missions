@@ -36,7 +36,7 @@ diag_log "SPAWN: START zombie and loot spawn";
 call init_spawnZombies;
 
 _position = [7500, 7500, 0];
-dbLoadLoot; 
+//dbLoadLoot; 
 importProxies;
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
@@ -50,31 +50,5 @@ if (dzLegacyDebug) then {
 diag_log "ADDONS: END load custom modules";
 diag_log "SERVER: END init.sqf";
 
-build_TentContainer = 
-{
-	if ( isServer ) then
-	{
-		_person = (_this select 1);
-		_tentType = (_this select 2) select 0;
-		_tentOri = (_this select 2) select 1;
-		_dist = (_this select 2) select 2;
-
-		_pos = getPos _person;
-		_ori = direction _person;
-		_xPos = (_pos select 0) + (sin _ori * _dist);
-		_yPos = (_pos select 1) + (cos _ori * _dist);
-		
-		if ( !(surfaceIsWater [_xPos, _yPos]) ) then
-		{
-			deleteVehicle (_this select 0);
-			_tent = _tentType createVehicle [_xPos, _yPos];
-			_tent setDir _ori - _tentOri;
-		}
-		else
-		{
-			[_person,'I can not pitch the tent in the water!','colorImportant'] call fnc_playerMessage;
-		};
-	};
-};
 
 setTimeForScripts 0.1;
