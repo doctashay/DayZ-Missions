@@ -249,7 +249,7 @@ norecoil = {
 };
 
 nocollide = {
-	if(toggle_4) then {hint "NO COLLIDE ON";} else {hint "NO COLLIDE OFF";};
+	if(toggle_4) then {hint "No collide on";} else {hint "No collide off";};
 	_objects = [];
 	while{toggle_4} do {
 		_list = player nearObjects 50;
@@ -311,6 +311,42 @@ ak74spawn = {
 	"AK74" createVehicle (getPosATL player);
 };
 
+displaymap = {
+	disableserialization;
+	closeDialog 0;
+	createDialog "RscMap";
+};
+
+mapteleport = {
+    disableSerialization;
+    closeDialog 0;
+    if (isNil "tele") then
+    {
+    	tele = {
+    		_pos = getPos player;
+    		_veh = "skoda" createVehicleLocal _this;
+    		player action ["getInDriver", _veh];
+    		sleep 1;
+    		while {count(player nearObjects ["skoda",50]) == 0} do {player action ["getInDriver", _veh];};
+    		deleteVehicle _veh;
+    		closeDialog 0;
+    		hint format ["Teleported to: %1", _this];
+    	};
+    	dmap =
+    	{
+    		_ctrl = _this select 0;
+    		{_ctrl drawIcon ["\DZ\ui\data\map\markers\military\triangle_CA.paa", if (_x == player) then {[1,0,1,1]} else {[1,0.7,0,1]}, getPos _x, ((1 - ctrlMapScale _ctrl) max 0.2)*30, ((1 - ctrlMapScale _ctrl) max 0.2)*30, getDir _x, "herro", 2];} forEach (entities "SurvivorBase");
+    	};
+    };
+    createDialog "RscDisplayMainMap";
+    {
+    	((findDisplay 12) displayCtrl _x) ctrlShow false;
+    } forEach [56,57,58,59,60,63,64,65,66,67,68,69,70,71,72,73,75,77,78,101,102,103,104,106,1001,1002,1003,1013,1021,1022,1023];
+    ((findDisplay 12) displayCtrl 51) ctrlSetEventHandler ["mousebuttondblclick","((_this select 0) posScreenToWorld [_this select 2, _this select 3]) spawn tele"];
+    ((findDisplay 12) displayCtrl 51) ctrlSetEventHandler ["Draw", "_this call dmap"];
+    hint "Doubleclick on the map to teleport";
+};
+
 toggle_1 = false;
 toggle_2 = false;
 toggle_3 = false;
@@ -338,6 +374,8 @@ menuScripts = [
 	["Script Executer",executer,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
 	["Suicide",respawn,false,"",false],
+	["Show Map", displaymap,false,"",false],
+	["Start Map Teleport", mapteleport,false,"",false],
 	["Start Debug Menu",startdebugmenu,false,"",false],
 	["Eject from vehicles",ejectVehicle,false,"",false],
 	["Infinite Ammo",infammo,true,"toggle_7",false],
@@ -377,7 +415,6 @@ vehMenu = [
 	["UAZ",uazSpawn,false,""],
 	["Ural",uralSpawn,false,""],
 	["HMMWV",hmmwvSpawn,false,""],
-	//["Hilux",hiluxspawn,false,""],
 	["Mi17",mi17spawn,false,""],
 	["MV22 Osprey",ospreyspawn,false,""]
 ];
@@ -385,7 +422,6 @@ vehMenu = [
 weapMenu = [
 	["AK74",ak74spawn,false,""]
 ];
-
 
 shiftMenu = {
 	if ((typeName _this) == "ARRAY") then {
@@ -560,5 +596,4 @@ startMenu = {
 };
 systemchat "Weed Menu Initiated. Press N to open.";
 };
-
 [] spawn weedMenu;
