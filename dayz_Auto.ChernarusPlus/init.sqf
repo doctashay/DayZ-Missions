@@ -10,7 +10,9 @@ DZ_MAX_ANIMALS = 2000;
 
 diag_log "SERVER: START load DayZ modules";
 dzLegacyDebug = true;
-dbSelectHost "http://localhost:5000/DayZServlet/";
+dbSelectHost "http://107.172.21.184:5000/DayZServlet/";
+
+
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
 
