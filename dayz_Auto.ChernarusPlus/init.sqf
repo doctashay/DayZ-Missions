@@ -38,6 +38,7 @@ diag_log "SPAWN: START zombie and loot spawn";
 call init_spawnZombies;
 
 _position = [7500, 7500, 0];
+//dbLoadLoot; 
 importProxies;
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";
@@ -58,4 +59,6 @@ diag_log "ADDONS: START load custom modules";
 
 diag_log "ADDONS: END load custom modules";
 diag_log "SERVER: END init.sqf";
+
+
 setTimeForScripts 0.1;
