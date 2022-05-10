@@ -28,7 +28,7 @@ setDate [2022, 2, 6, 17, 0];
 0 setOvercast 0;
 0 setFog 1;
 0 setRain 1;
-simulWeatherSync;
+//simulWeatherSync;
 //setAccTime 60;
 //skipTime 10.5;
 diag_log "SERVER: END world functions";
