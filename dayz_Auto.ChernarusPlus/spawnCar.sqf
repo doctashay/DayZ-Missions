@@ -65,5 +65,7 @@ _obj4 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
 
 _obj5 = createVehicle ["CombatBoots_Black", [2227.16, 5116.78, 0], [], 0, "CAN_COLLIDE"]; //base test
 _obj5 setObjectTexture [0, "C:\Flag_Ukraine_co.paa"];
+
+_agent = createAgent ["RedDeer", [2227.16, 5116.78, 0],[],0,"CAN_COLLIDE"];
 diag_log "Land vehicles created.";
 
