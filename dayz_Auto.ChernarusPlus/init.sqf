@@ -10,13 +10,13 @@ DZ_MAX_ANIMALS = 2000;
 
 diag_log "SERVER: START load DayZ modules";
 dzLegacyDebug = true;
-dbSelectHost "http://localhost:5000/DayZServlet/";
+//dbSelectHost "http://localhost:5000/DayZServlet/";
 
 
 call dbLoadPlayer;
 diag_log "SERVER: END load DayZ modules";
 
-call compile preprocessFileLineNumbers "\dzlegacy\modulesDayZ\init.sqf";
+call compile preprocessFileLineNumbers "\dz\modulesDayz\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
 call compile preprocessFileLineNumbers "spawnAir.sqf";
 call compile preprocessFileLineNumbers "spawnArmory.sqf";
