@@ -10,31 +10,33 @@ DZ_MAX_ANIMALS = 2000;
 
 diag_log "SERVER: START load DayZ modules";
 dzLegacyDebug = true;
-//dbSelectHost "http://localhost:5000/DayZServlet/";
-
+//dbSelectHost "http://localhost:5000/DayZServlet/"; //currently hardcoded
 
 call dbLoadPlayer;
-diag_log "SERVER: END load DayZ modules";
+
 
 call compile preprocessFileLineNumbers "\dz\modulesDayz\init.sqf";
 call compile preprocessFileLineNumbers "spawnCar.sqf";
-call compile preprocessFileLineNumbers "spawnAir.sqf";
-call compile preprocessFileLineNumbers "spawnArmory.sqf";
+diag_log "SERVER: END load DayZ modules";
 
 diag_log "SERVER: START world functions";
 _humidity = random 1;
 //setDate getSystemTime;
-setDate [2022, 2, 6, 11, 0];
-0 setOvercast _humidity;
+setDate [2022, 2, 6, 15, 0];
+0 setOvercast 1;
+0 setFog 1;
+
 simulWeatherSync;
-//setAccTime 60;
+setAccTime 60;
 //skipTime 10.5;
 diag_log "SERVER: END world functions";
 //exportProxies [_position, 200000];
 
-diag_log "SPAWN: START zombie and loot spawn";
+diag_log "SPAWN: START zombie spawn";
 call init_spawnZombies;
+diag_log "SPAWN: END zombie spawn";
 
+diag_log "SPAWN: START loot spawn";
 _position = [7500, 7500, 0];
 //dbLoadLoot; 
 importProxies;
@@ -44,7 +46,9 @@ diag_log "SPAWN: END loot spawn";
 diag_log "ADDONS: START load custom modules";
 
 if (dzLegacyDebug) then {
-
+call compile preprocessFileLineNumbers "spawnAir.sqf";
+call compile preprocessFileLineNumbers "spawnArmory.sqf";
+call compile preprocessFileLineNumbers "scripts\weatherManager.sqf";
 };
 
 diag_log "ADDONS: END load custom modules";
