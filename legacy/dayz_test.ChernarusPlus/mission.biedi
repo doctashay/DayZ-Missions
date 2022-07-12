@@ -1,0 +1,35 @@
+class prefix_0
+{
+	objectType="prefix";
+	class Arguments
+	{
+		ADDON[]=
+		{
+			"dz_weapons_arma2",
+			"hsim_wheeled_h_van_passenger",
+			"hsim_wheeled_h_ural",
+			"dz_books",
+			"dz_pistols_magnum",
+			"dz_pistols_fnx45",
+			"hsim_wheeled_h_firetruck",
+			"ca_air2_su25",
+			"hsim_wheeled_h_police_car",
+			"dz_animals_bear",
+			"dz_animals_cowv2",
+			"dz_animals_capra_hircus",
+			"hsim_air_h_airliner_a",
+			"hsim_air_h_aircraft_a"
+		};
+	};
+};
+class unit_3
+{
+	objectType="unit";
+	class Arguments
+	{
+		POSITION="[9770.1611, 1834.4303, -3.5866909]";
+		TYPE="SurvivorPartsMaleAfrican";
+		SKILL="0.60000002";
+		PLAYER="true";
+	};
+};
