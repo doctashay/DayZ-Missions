@@ -1,6 +1,6 @@
 respawn = "BASE";
 respawndelay = 5;
-onLoadMission="DayZ: lets roll";
+onLoadMission="DayZ Legacy: we rowdy";
 OnLoadIntro = "BANGARANG!";
 OnLoadIntroTime = false;
 OnLoadMissionTime = false;
