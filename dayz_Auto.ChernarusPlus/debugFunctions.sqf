@@ -1,9 +1,9 @@
 //DayZ Legacy 0.44
-//debugFunctions.sqf - A series of debug functions that are called on the client-side. 
+//debugFunctions.sqf - A series of debug functions that are called on the client-side using spawnForClient in modulesDayZ\player_queued.sqf.
 
 diag_log "DayZ Legacy: Debug functions have been called.";
-
 dzLegacyDebug = true;
+
  if (dzLegacyDebug) then
  {
 	waitUntil {isSceneReady};

@@ -9,7 +9,7 @@ call compile preprocessFileLineNumbers "\dz\modulesDayz\init.sqf";
 DZ_MP_CONNECT = true;
 dzLegacyDebug = false;
 DZ_MAX_ZOMBIES = 2000;
-DZ_MAX_ANIMALS = 200;
+DZ_MAX_ANIMALS = 500;
 
 diag_log "SERVER: START load DayZ modules";
 
@@ -32,15 +32,14 @@ setDate [2022, 2, 6, 15, 0];
 diag_log "SERVER: END world functions";
 //exportProxies [_position, 200000];
 
-diag_log "SPAWN: START zombie spawn";
+diag_log "SPAWN: START entity spawn";
 call init_spawnZombies;
-diag_log "SPAWN: END zombie spawn";
-
 call init_spawnWildAnimals;
+diag_log "SPAWN: END entity spawn";
 
 diag_log "SPAWN: START loot spawn";
 _position = [7500, 7500, 0];
-//dbLoadLoot; 
+//dbLoadLoot;
 importProxies;
 spawnLoot [_position, 30000, 35000];
 diag_log "SPAWN: END loot spawn";

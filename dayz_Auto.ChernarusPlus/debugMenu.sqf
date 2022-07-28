@@ -4,39 +4,29 @@
 weedMenu = {
 
 fullLoadout = {
-_weapon = player createInInventory "M4A1";
+_weapon = "M4A1" createVehicle (getPosATL player);
 _weapon addMagazine "M_STANAG_30Rnd";
 _weapon createWeaponAttachment "Attachment_Optic_ACOG";
 _weapon createWeaponAttachment "Attachment_Suppressor_556";
 _weapon createWeaponAttachment "Attachment_Buttstock_M4MP_Black";
 _weapon createWeaponAttachment "Attachment_Handguard_M4MP_Black";
-player createInInventory "BagTaloon_Green";
-player createInInventory "BallisticHelmet_Black"; 
-player createInInventory "M_STANAG_30Rnd";
-player createInInventory "M_STANAG_30Rnd";
-player createInInventory "M_STANAG_30Rnd";
-player createInInventory "TTsKO_Jacket_Camo";
-player createInInventory "MedicalItem_Bloodbag";
-player createInInventory "UKAssVest_Black";
-player createInInventory "Magnum";
+"BagTaloon_Green" createVehicle (getPosATL player);
+"BallisticHelmet_Black" createVehicle (getPosATL player); 
+"M_STANAG_30Rnd" createVehicle (getPosATL player);
+"M_STANAG_30Rnd" createVehicle (getPosATL player);
+"M_STANAG_30Rnd" createVehicle (getPosATL player);
+"TTsKO_Jacket_Camo" createVehicle (getPosATL player);
+"MedicalItem_Bloodbag" createVehicle (getPosATL player);
+"UKAssVest_Black" createVehicle (getPosATL player); 
+"Magnum" createVehicle (getPosATL player);
 };
 
-nightlight = {
-		if (toggle_13) then
-		{
-			_light = "#lightpoint" createVehicleLocal getpos player; 
-			_light setLightBrightness 9; 
-			_light setLightAmbient[15, 15, 15]; 
-			_light setLightColor[.4, 1, 0]; 
-			_light lightAttachObject [player, [0,0,15]];
-			systemchat "Night Light ON";
-		}
-		else
-		{
-			deleteVehicle _light;
-			systemchat "Night Light OFF";
-		};
-};							
+toggle_engine =
+{
+	onEachFrame{
+		vehicle player engineOn false;
+	};
+};
 
 debugcam = {
 		systemchat "Debug Camera activated. Press Numpad 0 to Exit";
@@ -60,9 +50,9 @@ debugcam = {
 
 respawn = {
 		player setVelocity[0,0,1000];
-		sleep 0.2;
+		sleep 0.5;
 		player setVelocity[0,0,-1000];
-		sleep 0.3;
+		sleep 0.5;
 };
 
 fastwalk = {
@@ -71,7 +61,7 @@ fastwalk = {
 	while{toggle_1} do {
 		if(_doWait) then {sleep 0.1;_doWait = false;};
 		if(inputAction "MoveForward" > 0|| inputAction "MoveFastForward" > 0|| inputAction "MoveSlowForward" > 0 || inputAction "EvasiveForward" > 0) then {
-			_distance = 0.7;
+			_distance = 0.8;
 			_dir = getdir vehicle player;
 			_pos = getposasl vehicle player;
 			if ((_pos select 2) > 5) then 
@@ -86,7 +76,7 @@ fastwalk = {
 			_doWait = true;
 		} else {
 			if(inputAction "MoveBack" > 0|| inputAction "EvasiveBack" > 0) then {
-				_distance = -0.7;
+				_distance = -0.8;
 				_dir = getdir vehicle player;
 				_pos = getposasl vehicle player;
 				if ((_pos select 2) > 5) then 
@@ -118,7 +108,6 @@ cloudyday = {
     0 setRain 0;
 	0 setFog 0.3;
 	setDate [2022, 2, 6, 9, 0];
-	simulWeatherSync;
 };
 
 lightrainyday = {
@@ -126,7 +115,6 @@ lightrainyday = {
     0 setRain 0.8;
 	0 setFog 0.5;
 	setDate [2022, 2, 6, 10, 0];
-	simulWeatherSync;
 };
 
 heavyrainyday = {
@@ -134,7 +122,6 @@ heavyrainyday = {
     0 setRain 1;
 	0 setFog 0.7;
 	setDate [2022, 2, 6, 10, 0];
-	simulWeatherSync;
 };
 
 foggyday = {
@@ -142,7 +129,6 @@ foggyday = {
     0 setRain 0;
 	0 setFog 1;
 	setDate [2022, 2, 6, 12, 0];
-	simulWeatherSync;
 };
 
 sunnyday = {
@@ -150,7 +136,6 @@ sunnyday = {
     0 setRain 0;
 	0 setFog 0;
 	setDate [2022, 2, 6, 12, 0];
-	simulWeatherSync;
 };
 
 cloudynight = {
@@ -158,7 +143,6 @@ cloudynight = {
     0 setRain 0;
 	0 setFog 0.2;
 	setDate [2022, 2, 6, 1, 0];
-	simulWeatherSync;
 };
 
 lightrainynight = {
@@ -166,7 +150,6 @@ lightrainynight = {
     0 setRain 0.8;
 	0 setFog 0.5;
 	setDate [2022, 2, 6, 1, 0];
-	simulWeatherSync;
 };
 
 heavyrainynight = {
@@ -174,7 +157,6 @@ heavyrainynight = {
     0 setRain 1;
 	0 setFog 1;
 	setDate [2022, 2, 6, 1, 0];
-	simulWeatherSync;
 };
 
 foggynight = {
@@ -182,7 +164,6 @@ foggynight = {
     0 setRain 0;
 	0 setFog 1;
 	setDate [2022, 2, 6, 1, 0];
-	simulWeatherSync;
 };
 
 clearnight = {
@@ -190,7 +171,6 @@ clearnight = {
     0 setRain 0;
 	0 setFog 0;
 	setDate [2022, 2, 6, 23, 0];
-	simulWeatherSync;
 };
 
 infammo = {
@@ -217,10 +197,11 @@ startdebugmenu = {
 };
 
 ejectVehicle = {
+	player setVelocity[0, 0, 0];
 	moveOut player;
 };
 
-executer = {
+executor = {
 	closedialog 0;
 	sleep 0.1;
 	createdialog 'rscdisplaynote';
@@ -228,7 +209,7 @@ executer = {
 	disableSerialization;
 	ctrlSetText[1600,'Execute'];
 	ctrlSettext[1601,'Exit'];
-	ctrlSetText[1300,'Weed Script Executer'];
+	ctrlSetText[1300,'Weed Script Executor'];
 	buttonSetAction[1600,'_text = (ctrlText 1400);[] spawn compile _text;'];
 };
 
@@ -335,7 +316,8 @@ menuScripts = [
 	["Teleport Menu",{tempArray = teleMenu;teleMenu spawn genSubMenu;},false,"",true],
 	["Weather Menu",{tempArray = weatherMenu;weatherMenu spawn genSubMenu;},false,"",true],
 	["Weapon Menu",{tempArray = weapMenu;weapMenu spawn genSubMenu;},false,"",true],
-	["Script Executer",executer,false,"",false],
+	["Script Executor",executor,false,"",false],
+	["Vehicle Engine Off"],toggle_engine,false,"",false],
 	["Full Loadout",fullLoadout,false,"",false],
 	["Suicide",respawn,false,"",false],
 	["Start Debug Menu",startdebugmenu,false,"",false],
@@ -346,7 +328,6 @@ menuScripts = [
 	["Time Night",timenight,false,"",false],
 	["No Collide",nocollide,true,"toggle_4",false],
 	["Debug Camera",debugcam,false,"",false],
-	["Night Light",nightlight,false,"",false],
 	["Fast Walk", fastwalk,true,"toggle_1",false],
 	["No Grass",removegrass,true,"toggle_5",false]
 ];
